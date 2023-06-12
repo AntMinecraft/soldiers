@@ -1,0 +1,10 @@
+name: $name
+version: $version
+main: com.antonio32a.soldiers.Soldiers
+description: $description
+load: STARTUP
+authors:
+    - Antonio32A
+depend:
+    - ant-core
+api-version: $apiVersion
