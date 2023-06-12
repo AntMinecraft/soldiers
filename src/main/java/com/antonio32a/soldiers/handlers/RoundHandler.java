@@ -127,7 +127,7 @@ public final class RoundHandler implements Listener {
             }
         }
 
-        new RoundEndEvent(winner).callEvent();
+        new RoundEndEvent(winner, winner == null).callEvent();
         red.setScore(0);
         blue.setScore(0);
     }

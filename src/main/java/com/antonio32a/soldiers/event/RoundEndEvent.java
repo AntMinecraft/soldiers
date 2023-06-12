@@ -18,11 +18,12 @@ public final class RoundEndEvent extends Event {
      * The team which won the round.
      * If the round ended in a draw, this will be null.
      */
-    @Nullable
-    private final GameTeam winningTeam;
+    @Nullable private final GameTeam winningTeam;
+    private final boolean draw;
 
-    public RoundEndEvent(@Nullable GameTeam winningTeam) {
+    public RoundEndEvent(@Nullable GameTeam winningTeam, boolean draw) {
         this.winningTeam = winningTeam;
+        this.draw = draw;
     }
 
     @SuppressWarnings("unused") // Needed for custom events

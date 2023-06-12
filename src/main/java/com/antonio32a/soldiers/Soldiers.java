@@ -53,6 +53,7 @@ public final class Soldiers extends JavaPlugin implements Listener {
 
         Bukkit.getPluginManager().registerEvents(new PlayerListener(), this);
         Bukkit.getPluginManager().registerEvents(new DamageListener(), this);
+        Bukkit.getPluginManager().registerEvents(new XPListener(), this);
 
         Bukkit.getPluginManager().registerEvents(new SidebarRenderer(), this);
         Bukkit.getPluginManager().registerEvents(new ProfileRenderer(), this);
