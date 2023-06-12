@@ -30,7 +30,7 @@ import java.util.concurrent.ExecutionException;
 @Getter
 @Slf4j
 public final class GamePlayer {
-    public static final int DAMAGE_HISTORY_TTL = 5000;
+    public static final int DAMAGE_HISTORY_TTL = 15000;
     private final Player bukkitPlayer;
     private final HashMap<UUID, Long> lastHitBy = new HashMap<>();
     @Setter
