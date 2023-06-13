@@ -93,12 +93,12 @@ public final class RoundHandler implements Listener {
                 player.sendTitlePart(TitlePart.TITLE, Formatting.parse("<yellow>It's a tie!</yellow>"));
                 player.sendTitlePart(TitlePart.SUBTITLE, teleportingBackText);
                 player.sendTitlePart(
-                        TitlePart.TIMES,
-                        Title.Times.of(
-                                Duration.ZERO,
-                                Duration.ofSeconds(1),
-                                Duration.ofMillis(750)
-                        )
+                    TitlePart.TIMES,
+                    Title.Times.of(
+                        Duration.ZERO,
+                        Duration.ofSeconds(1),
+                        Duration.ofMillis(750)
+                    )
                 );
             }
         } else {
@@ -112,17 +112,17 @@ public final class RoundHandler implements Listener {
                 }
 
                 player.sendTitlePart(TitlePart.TITLE, Formatting.parse(
-                        "<bold><team> <green>wins</green></bold>",
-                        Placeholder.component("team", winner.getName())
+                    "<bold><team> <green>wins</green></bold>",
+                    Placeholder.component("team", winner.getName())
                 ));
                 player.sendTitlePart(TitlePart.SUBTITLE, teleportingBackText);
                 player.sendTitlePart(
-                        TitlePart.TIMES,
-                        Title.Times.of(
-                                Duration.ZERO,
-                                Duration.ofSeconds(1),
-                                Duration.ofMillis(750)
-                        )
+                    TitlePart.TIMES,
+                    Title.Times.of(
+                        Duration.ZERO,
+                        Duration.ofSeconds(1),
+                        Duration.ofMillis(750)
+                    )
                 );
             }
         }
@@ -151,37 +151,37 @@ public final class RoundHandler implements Listener {
 
             bossBar.progress(percent);
             Component topText = Formatting.parse(
-                    "<team> <gray>(</gray><score><gray>)</gray> <yellow>vs.</yellow> <other> <gray>(</gray><other_score><gray>)</gray>",
-                    Placeholder.component("team", team.getName()),
-                    Placeholder.component("other", otherTeam.getName()),
-                    Placeholder.component("score", team.formatScore()),
-                    Placeholder.component("other_score", otherTeam.formatScore())
+                "<team> <gray>(</gray><score><gray>)</gray> <yellow>vs.</yellow> <other> <gray>(</gray><other_score><gray>)</gray>",
+                Placeholder.component("team", team.getName()),
+                Placeholder.component("other", otherTeam.getName()),
+                Placeholder.component("score", team.formatScore()),
+                Placeholder.component("other_score", otherTeam.formatScore())
             );
 
 
             Component bottomText;
             if (!isDelayStage) {
                 bottomText = Formatting.parse(
-                        "<gray>Time left:</gray> <green><time></green>",
-                        Placeholder.unparsed("time", formatTime(timeLeft))
+                    "<gray>Time left:</gray> <green><time></green>",
+                    Placeholder.unparsed("time", formatTime(timeLeft))
                 );
             } else {
                 bottomText = Formatting.parse(
-                        "<gray>Next round in: </gray><white><time></white>",
-                        Placeholder.unparsed(
-                                "time",
-                                formatTime((int) ((delayStageEnd - System.currentTimeMillis()) / 1000 * 20))
-                        )
+                    "<gray>Next round in: </gray><white><time></white>",
+                    Placeholder.unparsed(
+                        "time",
+                        formatTime((int) ((delayStageEnd - System.currentTimeMillis()) / 1000 * 20))
+                    )
                 );
             }
 
             bottomText = bottomText.style(bottomText.style().font(BOSSBAR_SECOND_LINE_FONT));
             int spacing = (Formatting.calculateWidth(topText) + Formatting.calculateWidth(bottomText)) / 2;
             bossBar.name(
-                    topText
-                            .append(Component.text(Spacing.calculateSpacing(-spacing)))
-                            .append(bottomText)
-                            .append(Component.text(Spacing.calculateSpacing(spacing - Formatting.calculateWidth(bottomText))))
+                topText
+                    .append(Component.text(Spacing.calculateSpacing(-spacing)))
+                    .append(bottomText)
+                    .append(Component.text(Spacing.calculateSpacing(spacing - Formatting.calculateWidth(bottomText))))
             );
         }
     }

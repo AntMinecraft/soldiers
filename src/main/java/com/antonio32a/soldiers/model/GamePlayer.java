@@ -33,8 +33,7 @@ public final class GamePlayer {
     public static final int DAMAGE_HISTORY_TTL = 15000;
     private final Player bukkitPlayer;
     private final HashMap<UUID, Long> lastHitBy = new HashMap<>();
-    @Setter
-    private int maxHealth = 100;
+    @Setter private int maxHealth = 100;
     private int health = 100;
     private boolean hasSpawned = true;
 
@@ -135,9 +134,9 @@ public final class GamePlayer {
      * @return Whether the health was updated.
      */
     public boolean updateHealth(
-            int health,
-            @NotNull GamePlayerHealthUpdateEvent.HealthUpdateReason reason,
-            @Nullable Entity damager
+        int health,
+        @NotNull GamePlayerHealthUpdateEvent.HealthUpdateReason reason,
+        @Nullable Entity damager
     ) {
         return updateHealth(health, reason, damager, true);
     }
@@ -152,18 +151,18 @@ public final class GamePlayer {
      * @return Whether the health was updated.
      */
     public boolean updateHealth(
-            int health,
-            @NotNull GamePlayerHealthUpdateEvent.HealthUpdateReason reason,
-            @Nullable Entity damager,
-            boolean fakeEffect
+        int health,
+        @NotNull GamePlayerHealthUpdateEvent.HealthUpdateReason reason,
+        @Nullable Entity damager,
+        boolean fakeEffect
     ) {
         int oldHealth = this.health;
         GamePlayerHealthUpdateEvent event = new GamePlayerHealthUpdateEvent(
-                this,
-                reason,
-                damager,
-                oldHealth,
-                health
+            this,
+            reason,
+            damager,
+            oldHealth,
+            health
         );
 
         // We want to update the health before calling the event, so the event can access player.getHealth() directly
@@ -218,9 +217,9 @@ public final class GamePlayer {
         }
 
         @Nullable Map.Entry<UUID, Long> lastHitEntry = lastHitBy.entrySet()
-                .stream()
-                .min(Map.Entry.comparingByValue())
-                .orElse(null);
+            .stream()
+            .min(Map.Entry.comparingByValue())
+            .orElse(null);
 
         if (lastHitEntry != null) {
             @Nullable Player killer = Bukkit.getPlayer(lastHitEntry.getKey());

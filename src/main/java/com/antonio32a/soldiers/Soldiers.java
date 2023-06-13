@@ -16,8 +16,6 @@ import com.antonio32a.soldiers.item.impl.Example;
 import com.antonio32a.soldiers.item.impl.launcher.RocketLauncher;
 import com.antonio32a.soldiers.item.impl.launcher.TheDirectHit;
 import com.antonio32a.soldiers.item.impl.launcher.TheSpammer;
-import com.antonio32a.soldiers.handlers.DamageListener;
-import com.antonio32a.soldiers.handlers.PlayerListener;
 import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
 import org.bukkit.Bukkit;
